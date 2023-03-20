@@ -1,4 +1,4 @@
-let myArray = [ "time", "password","date", "text"]
+let myArray = [ "time", "password","date", "text", "button", "week"]
 
 // myArray.forEach(x => console.log(x));
 
@@ -32,4 +32,22 @@ function RenderCrazyInputs(input)
 
 
 myArray.forEach(x=>RenderCrazyInputs(x));
+
+let filteredCrazyArray = myArray.filter(a=>a=="time"|| a=="button");
+console.log(filteredCrazyArray);//para chequear
+
+
+// Voy a probar una función que me deje cambiar el parent id 
+
+
+function RenderCrazyInputsGeneral(parentID, input)
+{
+    let myCrazyInput = new CrazyInput (parentID,input);
+    myCrazyInput.CrazyRender();
+}
+
+
+filteredCrazyArray.forEach(y=>RenderCrazyInputsGeneral("appFiltered",y));
+
+
 
